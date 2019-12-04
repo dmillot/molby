@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Molby.Views.MainPage"
+              NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#303133">
+
+    <StackLayout>
+        <!--<Grid BackgroundColor="#303133">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>-->
+
+            <Image Source="{Binding UrlImage}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+            <Label Text="{Binding Names}" TextColor="White" FontAttributes="Bold" FontSize="Large" VerticalOptions="FillAndExpand" HorizontalOptions="Center" />
+            <Label Text="Molby" TextColor="White" FontAttributes="Bold" FontSize="Medium" VerticalOptions="FillAndExpand" HorizontalOptions="Center" />
+            <Label Text="{Binding Promotion}" TextColor="White" FontAttributes="Bold" FontSize="Medium" VerticalOptions="FillAndExpand" HorizontalOptions="Center" />
+
+            <Label Text="Level" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Medium" TextColor="White" />
+
+            <!--<ScrollView Orientation="Horizontal" HorizontalOptions="Fill" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="5">
+            <StackLayout>-->
+            <Label Text="{Binding NameLevel}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" />
+            <ImageButton Source="{Binding LevelImage}" Clicked="imbLevelImageClicked" VerticalOptions="Center" HorizontalOptions="Center" />
+            <Label Text="{Binding XPerience}" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large" FontAttributes="Bold" />
+            <!--</StackLayout>
+        </ScrollView>-->
+
+            <Label Text="Rewards Won" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Medium" TextColor="White" />
+            <ScrollView Orientation="Horizontal" Grid.Row="10" Grid.Column="2">
+                <ListView x:Name="MyListLevel" 
+                  ItemsSource="{Binding GroupLevels}"
+                  IsPullToRefreshEnabled="true"
+                  SelectionMode="Single"
+                  RefreshControlColor="#3385D4"
+                  SeparatorColor="#3385D4">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0,6*" />
+                                        <ColumnDefinition Width="0,2*" />
+                                        <ColumnDefinition Width="0,2*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding LevelName}" TextColor="Black" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Label Text="{Binding LevelImage}" TextColor="Black" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                    <Image Source="{Binding LevelXP}" Aspect="AspectFill" Grid.Column="2"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+
+           
+            <Label Text="Groups" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Medium" TextColor="White" />
+
+
+            <ListView ItemsSource="{Binding ListGroup}" 
+                  IsPullToRefreshEnabled="true"
+                  SelectionMode="Single"
+                  RefreshControlColor="#3385D4">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0,8*" />
+                                    <ColumnDefinition Width="0,2*" />
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Name}" TextColor="#FFFFFF" FontAttributes="Bold" Grid.Column="0"/>
+                                <Image Source="{Binding ImageUrl}" Aspect="AspectFill" Grid.Column="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        <!--</Grid>-->
+    </StackLayout>
+
+</ContentPage>

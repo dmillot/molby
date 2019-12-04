@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Molby.Views.GroupPage"
+             BackgroundColor="#303133">
+
+    <StackLayout>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Source="{Binding ImageSource1}" Grid.Column="0" Grid.Row="0" />
+            <Image Source="{Binding ImageSource2}" Grid.Column="1" Grid.Row="0" />
+            <Image Source="{Binding ImageSource3}" Grid.Column="0" Grid.Row="1" />
+            <Image Source="{Binding ImageSource4}" Grid.Column="1" Grid.Row="1" />
+        </Grid>
+        <Label Text="Molby" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" />
+        <Label Text="{Binding LabelTimeToProject}" HorizontalOptions="Center" FontSize="Medium" />
+        <Label />
+        <Label Text="{Binding LabelEXPToProject}" HorizontalOptions="Center" FontSize="Large" />
+        <Label />
+        <ListView x:Name="MyListProject" 
+                  ItemsSource="{Binding GroupProjects}"
+                  IsPullToRefreshEnabled="true"
+                  SelectionMode="Single"
+                  RefreshControlColor="#3385D4"
+                  SeparatorColor="#3385D4">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0,6*" />
+                                <ColumnDefinition Width="0,2*" />
+                                <ColumnDefinition Width="0,2*" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding ProjectName}" TextColor="White" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Text="{Binding ProjectNamePoints}" TextColor="White" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Image Source="{Binding ImageURLProject}" Aspect="AspectFill" Grid.Column="2"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Attribute 300 Points" BackgroundColor="#003988" HorizontalOptions="Center" VerticalOptions="FillAndExpand" FontSize="Large" />
+
+    </StackLayout>
+  
+</ContentPage>

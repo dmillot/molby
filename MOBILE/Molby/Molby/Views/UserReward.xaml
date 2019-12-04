@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Molby.Views.UserReward"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#303133">
+    <StackLayout>
+        <Label/>
+        <Label Text="REWARDS LIST" HorizontalOptions="Center" VerticalOptions="Center" FontAttributes="Bold" FontSize="Large" />
+        <Label />
+        <CollectionView SelectionMode="Single" ItemsSource="{Binding GroupProjects}" Margin="15" SelectionChanged="UserRwardSelected">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout Orientation="Vertical"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Row="0" Grid.Column="0" Source="{Binding ImageURLProject}" HorizontalOptions="Center" VerticalOptions="Center"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding ProjectName}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding ProjectNamePoints}" HorizontalOptions="Center" VerticalOptions="Center" TextColor="White" FontAttributes="Bold"/>
+                        </Grid>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            </CollectionView>
+    </StackLayout>
+</ContentPage>

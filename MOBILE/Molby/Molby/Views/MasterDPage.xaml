@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="http://prismlibrary.com"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  NavigationPage.HasNavigationBar="False"
+                  x:Class="Molby.Views.MasterDPage"
+                  BackgroundColor="#303133"
+                  IconImageSource="https://bit.ly/34iXxXo">
+
+    <MasterDetailPage.Master>
+        <NavigationPage Title="Molby" BackgroundColor="#303133">
+        <!--<NavigationPage BackgroundColor="#303133">-->
+            <x:Arguments>
+                <ContentPage Title="Molby" BackgroundColor="#303133">
+                <!--<ContentPage BackgroundColor="#303133">-->
+                    <StackLayout>
+                        <Image Source="https://bit.ly/34iXxXo" Margin="15" VerticalOptions="Center" HorizontalOptions="Center" />
+                        <Button BackgroundColor="#303133" Clicked="BtClickedHome" HorizontalOptions="Fill" VerticalOptions="Center" TextColor="White" Text="Home" FontAttributes="Bold" />
+                        <Button BackgroundColor="#303133" Clicked="BtClickedSearch" HorizontalOptions="Fill" VerticalOptions="Center" TextColor="White" Text="Search" FontAttributes="Bold" />
+                        <Button BackgroundColor="#303133" Clicked="BtClickedAdding" HorizontalOptions="Fill" VerticalOptions="Center" TextColor="White" Text="Adding" FontAttributes="Bold" />
+                        <Button BackgroundColor="#303133" Clicked="BtClickedRewards" HorizontalOptions="Fill" VerticalOptions="Center" TextColor="White" Text="Rewards" FontAttributes="Bold" />
+                        <Button BackgroundColor="#303133" Clicked="BtClickedProfil" HorizontalOptions="Fill" VerticalOptions="Center" TextColor="White" Text="Profil" FontAttributes="Bold" />
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Master>
+    
+</MasterDetailPage>
