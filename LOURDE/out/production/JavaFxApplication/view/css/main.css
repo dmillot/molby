@@ -1,0 +1,229 @@
+#mainGrid{
+    -fx-background-color: #303133;
+}
+
+.pane-menu{
+    -fx-background-color: #303133;
+}
+
+.pane-menu-selected{
+    -fx-background-color: #0052A1;
+}
+
+#label-menu-hover {
+    -fx-font-family: "Segoe UI";
+    -fx-text-fill: #FFFFFF;
+}
+
+#label-menu {
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: #FFFFFFCC;
+}
+
+#topMenu{
+    -fx-background-color: #0052A1;
+    -fx-border-color: #a8d3ff;
+    -fx-border-width: 0 0 2 0;
+}
+
+#topLogo {
+    -fx-background-color: #303133;
+    -fx-border-color: #ffffffcc;
+    -fx-border-width: 0 0 2 0;
+}
+
+.list-view-row{
+    -fx-border-width: 1;
+    -fx-border-color: #a8d3ff;
+}
+
+
+.jfx-list-cell{
+     -fx-background-insets: 0.0;
+     -fx-border-width: 0;
+ }
+
+
+
+.jfx-list-cell:even{
+    -fx-background-color: #0052A1;
+}
+
+.jfx-list-cell:odd{
+    -fx-background-color: #0067c7;
+}
+
+.jfx-list-cell:hover{
+    -fx-background-color: #003988;
+}
+
+
+.jfx-list-cell:selected {
+    -fx-background-color: #801430;
+}
+
+.jfx-list-cell:selected:hover {
+    -fx-background-color: #670017;
+}
+
+.jfx-list-cell:empty{
+   -fx-border-width: 0;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color:transparent;
+    -fx-border-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 0;
+}
+
+.scroll-bar:horizontal .increment-button ,
+.scroll-bar:horizontal .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-padding:0 0 10 0;
+}
+
+.scroll-bar:vertical .increment-button ,
+.scroll-bar:vertical .decrement-button {
+    -fx-background-color:transparent;
+    -fx-background-radius: 0em;
+    -fx-padding:0 10 0 0;
+}
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow{
+    -fx-shape:" ";
+    -fx-padding:0;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color:derive(black,90%);
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 0;
+}
+
+.jfx-progress-bar > .track, .jfx-progress-bar > .bar {
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+}
+
+.jfx-progress-bar > .bar {
+    -fx-background-color: #801430;
+}
+
+.jfx-spinner .arc {
+    -fx-stroke: #303133;
+    -fx-stroke-width: 10;
+}
+
+jfx-dialog-layout > .jfx-layout-heading{
+    -fx-padding: 0;
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+.jfx-dialog-layout > .jfx-layout-body {
+    -fx-padding: 0 0 50 0;
+    -fx-min-height: 100;
+}
+
+.jfx-dialog-layout > .jfx-layout-actions {
+    -fx-padding: 0;
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+.jfx-dialog-layout > .jfx-layout-actions .jfx-button {
+    -fx-padding: 0;
+    -fx-min-height: 0;
+    -fx-pref-height: 0;
+    -fx-max-height: 0;
+}
+
+
+
+.jfx-text-field {
+    -jfx-focus-color: #003988;
+    -jfx-unfocus-color: #969696;
+    -fx-padding: 0.333333em 0 0.333333em 0;
+    -fx-text-fill: #969696;
+}
+
+.jfx-text-field-second {
+    -jfx-focus-color: #801430;
+    -jfx-unfocus-color: #969696;
+    -fx-padding: 0.333333em 0 0.333333em 0;
+    -fx-text-fill: #969696;
+}
+
+.jfx-text-area {
+    -jfx-focus-color: #003988;
+    -jfx-unfocus-color: #969696;
+    -fx-padding: 0.333333em 0 0 0 ;
+    -fx-text-fill: #969696;
+}
+
+.jfx-text-area-second {
+    -jfx-focus-color: #801430;
+    -jfx-unfocus-color: #969696;
+    -fx-padding: 0.333333em 0 0 0 ;
+    -fx-text-fill: #969696;
+}
+
+.button-add-xp {
+    -fx-background-color: #0052a1;
+}
+
+.button-leader {
+    -fx-background-color: transparent;
+}
+
+.button-leader:hover {
+    -fx-background-color: transparent;
+}
+
+.button-remove-xp {
+   -fx-background-color: #801430;
+}
+
+
+.button-add-xp:hover {
+    -fx-background-color: #003988;
+}
+
+.button-remove-xp:hover {
+    -fx-background-color: #670017;
+}
+
+
+.button-update, .button-cancel-other {
+    -fx-background-color: #0052A1;
+    -fx-text-fill: #FFFFFFCC;
+}
+
+
+
+.button-cancel-user, .button-delete {
+    -fx-background-color: #801430;
+    -fx-text-fill: #FFFFFFCC;
+}
+
+.button-cancel-user:hover, .button-delete:hover {
+  -fx-background-color: #670017;
+}
+
+
+
+.button-close{
+    -fx-background-color: #0052A1;
+    -fx-background-radius: 0px 0px 0px 3px;
+}
+
+.button-update:hover,.button-close:hover, .button-cancel-other:hover {
+    -fx-background-color: #003988;
+}
+

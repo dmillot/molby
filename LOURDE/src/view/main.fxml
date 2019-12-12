@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import molbyui.controls.*?>
+
+<GridPaneMolby fx:id="mainGrid" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+               prefHeight="1080.0" prefWidth="1920.0" stylesheets="@css/main.css" xmlns="http://javafx.com/javafx/11.0.1"
+               xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController" >
+  <columnConstraints>
+    <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="-Infinity" percentWidth="20.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="-Infinity" percentHeight="9.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="-Infinity" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBoxMolby  fx:id="topLogo" alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" pickOnBounds="false" prefHeight="80.0" prefWidth="384.0" onMouseClicked="#InitializeHome">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="75.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" HBoxMolby.hgrow="ALWAYS">
+               <image>
+                  <Image url="@img/logo.png" />
+               </image>
+               <HBoxMolby.margin>
+                  <Insets left="10.0" />
+               </HBoxMolby.margin>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" color="#000000af" height="20.0" offsetY="2.0" radius="12.0" width="30.0" />
+               </effect>
+            </ImageView>
+            <Label alignment="TOP_LEFT" ellipsisString="" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" text="Molby" textFill="#ffffffcc" wrapText="true">
+               <HBoxMolby.margin>
+                  <Insets left="15.0" />
+               </HBoxMolby.margin>
+               <font>
+                  <Font name="Segoe UI" size="35.0" />
+               </font>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="2.0" radius="12.0" width="30.0" />
+               </effect>
+            </Label>
+         </children>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </HBoxMolby>
+      <HBoxMolby fx:id="topMenu" alignment="CENTER_LEFT" fillHeight="false" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="1">
+         <children>
+            <JFXHamburger fx:id="burgerMenu" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#burgerClicked" prefHeight="50.0" prefWidth="50.0">
+               <HBoxMolby.margin>
+                  <Insets left="25.0" />
+               </HBoxMolby.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXHamburger>
+            <HBoxMolby alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="67.0" prefWidth="294.0">
+               <children>
+                  <Label fx:id="firstNameLabel" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" text="Matthieu" textFill="#ffffffcd">
+                     <font>
+                        <Font name="Segoe UI Light" size="32.0" />
+                     </font>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="2.0" radius="12.0" width="30.0" />
+                     </effect>
+                  </Label>
+                  <Label fx:id="nameLabel" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" text="ROYER" textFill="#ffffffcd">
+                     <font>
+                        <Font name="Segoe UI Light" size="32.0" />
+                     </font>
+                     <HBoxMolby.margin>
+                        <Insets left="10.0" />
+                     </HBoxMolby.margin>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="2.0" radius="12.0" width="30.0" />
+                     </effect>
+                  </Label>
+               </children>
+            </HBoxMolby>
+            <PaneMolby fx:id="notifPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="0.0" prefWidth="45.0">
+               <children>
+                  <ImageView fx:id="notifPicture" fitHeight="58.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/notification.png" />
+                     </image>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="15.0" offsetY="2.0" radius="9.5" width="25.0" />
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <Circle centerX="35.0" fill="#801430" layoutY="10.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Label fx:id="notifLabel" layoutX="31.0" layoutY="2.0" text="2" textFill="#ffffffcd" />
+               </children>
+               <HBoxMolby.margin>
+                  <Insets bottom="50.0" left="15.0" />
+               </HBoxMolby.margin>
+            </PaneMolby>
+         </children>
+      </HBoxMolby>
+      <VBoxMolby fx:id="vBoxMenu" fillWidth="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="980.0" prefWidth="383.0" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+         <children>
+            <PaneMolby fx:id="buttonLevel" depthTest="DISABLE" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="384.0" snapToPixel="false" styleClass="pane-menu">
+               <children>
+                  <Rectangle fx:id="rectangleLevel" fill="#303133" height="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="384.0" />
+                  <HBoxMolby alignment="CENTER_LEFT" focusTraversable="true" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="383.0" styleClass="buttonMenu">
+                     <children>
+                        <ImageView fitHeight="58.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/level.png" />
+                           </image>
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="2.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </ImageView>
+                        <Label ellipsisString="" styleClass="label-menu" text="Level" textFill="#ffffffcc" HBoxMolby.hgrow="ALWAYS">
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <font>
+                              <Font name="Segoe UI Light" size="25.0" />
+                           </font>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="5.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </Label>
+                     </children>
+                  </HBoxMolby>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </PaneMolby>
+            <PaneMolby fx:id="buttonReward" prefHeight="100.0" prefWidth="384.0" styleClass="pane-menu">
+               <children>
+                  <Rectangle fill="#303133" height="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="384.0" />
+                  <HBoxMolby alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="383.0" styleClass="buttonMenu">
+                     <children>
+                        <ImageView fitHeight="58.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/reward.png" />
+                           </image>
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="2.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </ImageView>
+                        <Label ellipsisString="" styleClass="label-menu" text="Reward" textFill="#ffffffcc" HBoxMolby.hgrow="ALWAYS">
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <font>
+                              <Font name="Segoe UI Light" size="25.0" />
+                           </font>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="5.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </Label>
+                     </children>
+                  </HBoxMolby>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </PaneMolby>
+            <PaneMolby fx:id="buttonPurchase" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="384.0" styleClass="pane-menu">
+               <children>
+                  <Rectangle fill="#303133" height="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="384.0" />
+                  <HBoxMolby alignment="CENTER_LEFT" fillHeight="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="395.0" styleClass="buttonMenu">
+                     <children>
+                        <ImageView fitHeight="51.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/purchases.png" />
+                           </image>
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="2.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </ImageView>
+                        <Label ellipsisString="" styleClass="label-menu" text="Purchases" textFill="#ffffffcc" HBoxMolby.hgrow="ALWAYS">
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <font>
+                              <Font name="Segoe UI Light" size="25.0" />
+                           </font>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="5.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </Label>
+                        <GridPaneMolby fx:id="notifMenu" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="90.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="30.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="30.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="30.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="-Infinity" prefHeight="20.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="-Infinity" prefHeight="20.0" valignment="CENTER" />
+                            <RowConstraints minHeight="-Infinity" prefHeight="20.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Rectangle fx:id="rectangleNotif" arcHeight="10.0" arcWidth="10.0" fill="#0052a1" height="30.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="30.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+                              <Label fx:id="labelNotifMenu" ellipsisString="" text="2" textFill="#ffffffcb" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI Bold" size="15.0" />
+                                 </font>
+                                 <effect>
+                                    <DropShadow blurType="GAUSSIAN" height="7.5" radius="3.875" width="10.0" />
+                                 </effect>
+                              </Label>
+                           </children>
+                        </GridPaneMolby>
+                     </children>
+                  </HBoxMolby>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </PaneMolby>
+            <PaneMolby fx:id="buttonUser" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="384.0" styleClass="pane-menu">
+               <children>
+                  <Rectangle fill="#303133" height="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="384.0" />
+                  <HBoxMolby alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="384.0" styleClass="buttonMenu">
+                     <children>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/user.png" />
+                           </image>
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="2.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </ImageView>
+                        <Label ellipsisString="" styleClass="label-menu" text="User" textFill="#ffffffcc" HBoxMolby.hgrow="ALWAYS">
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <font>
+                              <Font name="Segoe UI Light" size="25.0" />
+                           </font>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="5.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </Label>
+                     </children>
+                  </HBoxMolby>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </PaneMolby>
+            <PaneMolby fx:id="buttonGroup" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="384.0" styleClass="pane-menu">
+               <children>
+                  <Rectangle fill="#303133" height="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="384.0" />
+                  <HBoxMolby alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="384.0" styleClass="buttonMenu">
+                     <children>
+                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/group.png" />
+                           </image>
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="2.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </ImageView>
+                        <Label ellipsisString="" styleClass="label-menu" text="Group" textFill="#ffffffcc" HBoxMolby.hgrow="ALWAYS">
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <font>
+                              <Font name="Segoe UI Light" size="25.0" />
+                           </font>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="5.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </Label>
+                     </children>
+                  </HBoxMolby>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </PaneMolby>
+            <PaneMolby fx:id="buttonYearGroup" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="384.0" styleClass="pane-menu">
+               <children>
+                  <Rectangle fill="#303133" height="100.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="384.0" />
+                  <HBoxMolby alignment="CENTER_LEFT" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="384.0" styleClass="buttonMenu">
+                     <children>
+                        <ImageView fitHeight="59.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/promotion.png" />
+                           </image>
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="2.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </ImageView>
+                        <Label ellipsisString="" styleClass="label-menu" text="Year group" textFill="#ffffffcc">
+                           <HBoxMolby.margin>
+                              <Insets left="15.0" />
+                           </HBoxMolby.margin>
+                           <font>
+                              <Font name="Segoe UI Light" size="25.0" />
+                           </font>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" offsetY="5.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </Label>
+                     </children>
+                  </HBoxMolby>
+               </children>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </PaneMolby>
+         </children>
+      </VBoxMolby>
+      <Rectangle cache="true" cacheHint="SCALE_AND_ROTATE" fill="#ffffffcb" height="1082.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1.0" GridPane.halignment="RIGHT" GridPane.rowSpan="2">
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="25.0" radius="13.25" width="30.0" />
+         </effect>
+      </Rectangle>
+      <AnchorPaneMolby fx:id="anchorView" minHeight="-Infinity" minWidth="-Infinity" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <GridPaneMolby.margin>
+            <Insets />
+         </GridPaneMolby.margin>
+      </AnchorPaneMolby>
+   </children>
+</GridPaneMolby>

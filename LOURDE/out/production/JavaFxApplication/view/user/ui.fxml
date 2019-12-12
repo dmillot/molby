@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import molbyui.controls.*?>
+
+<AnchorPaneMolby fx:id="anchorUser" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="926.0" prefWidth="1536.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserController">
+   <children>
+      <GridPaneMolby prefHeight="926.0" prefWidth="1536.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="65.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="65.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="-Infinity" prefHeight="50.0" />
+            <RowConstraints minHeight="-Infinity" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="-Infinity" prefHeight="40.0" vgrow="SOMETIMES" />
+          <RowConstraints vgrow="ALWAYS" />
+          <RowConstraints minHeight="-Infinity" prefHeight="50.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <ListViewMolby fx:id="listViewUser" focusTraversable="false" styleClass="list-view-row" verticalGap="50.0" GridPaneMolby.columnIndex="1" GridPaneMolby.rowIndex="3">
+               <GridPaneMolby.margin>
+                  <Insets top="10.0" />
+               </GridPaneMolby.margin>
+               <effect>
+                  <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+               </effect>
+            </ListViewMolby>
+            <GridPaneMolby fx:id="gridViewUser" hgap="20.0" GridPaneMolby.columnIndex="1" GridPaneMolby.rowIndex="2">
+              <columnConstraints>
+                  <ColumnConstraints maxWidth="120.0" minWidth="-Infinity" prefWidth="120.0" />
+                  <ColumnConstraints maxWidth="200.0" minWidth="-Infinity" prefWidth="200.0" />
+                  <ColumnConstraints maxWidth="200.0" minWidth="-Infinity" prefWidth="200.0" />
+                  <ColumnConstraints maxWidth="125.0" minWidth="-Infinity" prefWidth="125.0" />
+                  <ColumnConstraints maxWidth="175.0" minWidth="-Infinity" prefWidth="175.0" />
+                  <ColumnConstraints maxWidth="175.0" minWidth="-Infinity" prefWidth="175.0" />
+                  <ColumnConstraints maxWidth="175.0" minWidth="-Infinity" prefWidth="175.0" />
+                  <ColumnConstraints halignment="CENTER" maxWidth="125.0" minWidth="-Infinity" prefWidth="125.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Picture" textFill="#ffffffcc">
+                     <font>
+                        <Font name="Segoe UI Light" size="20.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                     </effect>
+                  </Label>
+                  <Label text="Name" textFill="#ffffffcd" GridPaneMolby.columnIndex="1">
+                     <font>
+                        <Font name="Segoe UI Light" size="20.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                     </effect>
+                  </Label>
+                  <Label text="Firstname" textFill="#ffffffcc" GridPaneMolby.columnIndex="2">
+                     <font>
+                        <Font name="Segoe UI Light" size="20.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                     </effect>
+                  </Label>
+                   <Label text="Experience" textFill="#ffffffcc" GridPaneMolby.columnIndex="3">
+                       <font>
+                           <Font name="Segoe UI Light" size="20.0" />
+                       </font>
+                       <effect>
+                           <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                       </effect>
+                   </Label>
+                  <Label text="Actual level" textFill="#ffffffcd" GridPaneMolby.columnIndex="4">
+                     <font>
+                        <Font name="Segoe UI Light" size="20.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                     </effect>
+                  </Label>
+                  <Label text="Actual group" textFill="#ffffffcc" GridPaneMolby.columnIndex="5">
+                     <font>
+                        <Font name="Segoe UI Light" size="20.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                     </effect>
+                  </Label>
+                  <Label text="Year group" textFill="#ffffffcc" GridPaneMolby.columnIndex="6">
+                     <font>
+                        <Font name="Segoe UI Light" size="20.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                     </effect>
+                  </Label>
+                   <Label text="Edit" textFill="#ffffffcc" GridPaneMolby.columnIndex="7">
+                       <font>
+                           <Font name="Segoe UI Light" size="20.0" />
+                       </font>
+                       <effect>
+                           <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                       </effect>
+                   </Label>
+               </children>
+            </GridPaneMolby>
+            <GridPaneMolby fx:id="gridMenu" GridPaneMolby.columnIndex="1" GridPaneMolby.rowIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="-Infinity" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="User" textFill="#ffffffcc">
+                     <font>
+                        <Font name="Segoe UI" size="35.0" />
+                     </font>
+                     <effect>
+                        <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                     </effect>
+                  </Label>
+                  <GridPaneMolby fx:id="buttonExpand" onMouseClicked="#buttonExpand_Clicked" GridPaneMolby.columnIndex="1">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="30.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="-Infinity" prefWidth="30.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <ImageViewMolby fx:id="leftUp" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" GridPaneMolby.halignment="RIGHT" GridPaneMolby.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../img/left-up.png" />
+                           </image>
+                           <GridPaneMolby.margin>
+                              <Insets bottom="2.0" right="2.0" />
+                           </GridPaneMolby.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </ImageViewMolby>
+                        <ImageViewMolby fx:id="rightUp" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" GridPaneMolby.columnIndex="1" GridPaneMolby.halignment="LEFT" GridPaneMolby.valignment="BOTTOM">
+                           <image>
+                              <Image url="@../img/right-up.png" />
+                           </image>
+                           <GridPaneMolby.margin>
+                              <Insets bottom="2.0" left="2.0" />
+                           </GridPaneMolby.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </ImageViewMolby>
+                        <ImageViewMolby fx:id="leftDown" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" GridPaneMolby.halignment="RIGHT" GridPaneMolby.rowIndex="1" GridPaneMolby.valignment="TOP">
+                           <image>
+                              <Image url="@../img/left-down.png" />
+                           </image>
+                           <GridPaneMolby.margin>
+                              <Insets right="2.0" top="2.0" />
+                           </GridPaneMolby.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </ImageViewMolby>
+                        <ImageViewMolby fx:id="rightDown" fitHeight="12.0" fitWidth="12.0" pickOnBounds="true" preserveRatio="true" GridPaneMolby.columnIndex="1" GridPaneMolby.halignment="LEFT" GridPaneMolby.rowIndex="1" GridPaneMolby.valignment="TOP">
+                           <image>
+                              <Image url="@../img/right-down.png" />
+                           </image>
+                           <GridPaneMolby.margin>
+                              <Insets left="2.0" top="2.0" />
+                           </GridPaneMolby.margin>
+                           <effect>
+                              <DropShadow blurType="GAUSSIAN" height="20.0" radius="12.0" width="30.0" />
+                           </effect>
+                        </ImageViewMolby>
+                     </children>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </GridPaneMolby>
+               </children>
+            </GridPaneMolby>
+             <GridPaneMolby fx:id="loadingScreen" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                 <columnConstraints>
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                     <ColumnConstraints />
+                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                 </columnConstraints>
+                 <rowConstraints>
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     <RowConstraints minHeight="-Infinity" />
+                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                 </rowConstraints>
+                 <children>
+                     <JFXSpinner maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="250.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                 </children>
+             </GridPaneMolby>
+         </children>
+      </GridPaneMolby>
+
+      <StackPane fx:id="stackDialog" disable="true" prefHeight="926.0" prefWidth="1536.0" style="-fx-background-color: #000000CC;" visible="false" />
+   </children>
+   <effect>
+      <DropShadow />
+   </effect>
+</AnchorPaneMolby>
