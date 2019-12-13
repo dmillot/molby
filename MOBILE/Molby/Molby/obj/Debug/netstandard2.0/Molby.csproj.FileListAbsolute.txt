@@ -1,0 +1,16 @@
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\bin\Debug\netstandard2.0\Molby.deps.json
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\bin\Debug\netstandard2.0\Molby.dll
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\bin\Debug\netstandard2.0\Molby.pdb
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Views\GroupPage.xaml.g.cs
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Views\LevelDescriptionPage.xaml.g.cs
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Views\LevelsPage.xaml.g.cs
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Views\ProfilePage.xaml.g.cs
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Views\TabPage.xaml.g.cs
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Molby.AssemblyInfoInputs.cache
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Molby.AssemblyInfo.cs
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Molby.dll
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Molby.pdb
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Molby.csprojAssemblyReference.cache
+C:\Users\Damie\Desktop\XaMolby\Molby\Molby\Molby\obj\Debug\netstandard2.0\Views\RewardsPage.xaml.g.cs

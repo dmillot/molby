@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             BackgroundColor="#222222"
+             x:Class="Molby.Views.LevelsPage">
+
+    <ContentPage.Content>
+        <ListView x:Name="listView" IsVisible="True" RowHeight="100" ItemsSource="{Binding LevelsList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Label}" TextColor="White" />
+                            <Label Text="{Binding RequiredXp}" TextColor="White" />
+                            <Grid></Grid>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+  
+</ContentPage>
