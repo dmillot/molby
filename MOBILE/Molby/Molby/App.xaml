@@ -5,21 +5,20 @@
              x:Class="Molby.App">
 	<Application.Resources>
 
-		<!-- Application resource dictionary -->
         <ResourceDictionary>
-            <Style x:Key="navFooter" TargetType="ImageButton">
-                <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="HorizontalOptions" Value="Center" />
+            <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="#303133" />
+                <Setter Property="BarBackgroundColor" Value="Black" />
+                <Setter Property="BarTextColor" Value="White" />
+            </Style>
+            <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+                <Setter Property="BackgroundColor" Value="#303133" />
+            </Style>
+            <Style x:Key="buttonLabStyle" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="Black" />
-                <Setter Property="Grid.Row" Value="0" />
-            </Style>
-            <Style TargetType="Label">
-                <Setter Property="TextColor" Value="White" />
-            </Style>
-            <Style TargetType="Button">
                 <Setter Property="TextColor" Value="White" />
             </Style>
         </ResourceDictionary>
 
-	</Application.Resources>
+    </Application.Resources>
 </prism:PrismApplication>

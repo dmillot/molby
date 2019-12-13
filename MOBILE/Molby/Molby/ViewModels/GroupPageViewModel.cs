@@ -1,98 +1,80 @@
-﻿using Prism.Commands;
+﻿using Molby.Models;
+using Molby.Services;
+using Prism;
+using Prism.Commands;
 using Prism.Mvvm;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace Molby.ViewModels
 {
-    public class GroupPageViewModel : BindableBase
+    public class GroupPageViewModel : BindableBase, IActiveAware, INavigationAware
     {
-        #region ImageSource1
-        private string _imageSource1;
-        public string ImageSource1
-        {
-            get { return _imageSource1; }
-            set { SetProperty(ref _imageSource1, value); }
-        }
-        #endregion
-        #region ImageSource2
-        private string _imageSource2;
-        public string ImageSource2
-        {
-            get { return _imageSource2; }
-            set { SetProperty(ref _imageSource2, value); }
-        }
-        #endregion
-        #region ImageSource2
-        private string _imageSource3;
-        public string ImageSource3
-        {
-            get { return _imageSource3; }
-            set { SetProperty(ref _imageSource3, value); }
-        }
-        #endregion
-        #region ImageSource4
-        private string _imageSource4;
-        public string ImageSource4
-        {
-            get { return _imageSource4; }
-            set { SetProperty(ref _imageSource4, value); }
-        }
-        #endregion
+        private readonly GroupService _groupService;
+        private ObservableCollection<Group> _groupsList;
+        private Group _group;
+        private bool _isActive;
 
-        #region LabelTimeToProject
-        private string _labelTimeToProject;
-        public string LabelTimeToProject
+        public DelegateCommand<object> NavigateToProfile { get; set; }
+        public INavigationService NavigationService { get; set; }
+
+        public event EventHandler IsActiveChanged;
+
+        public bool IsActive
         {
-            get { return _labelTimeToProject; }
-            set { SetProperty(ref _labelTimeToProject, value); }
-        }
-        #endregion
-        #region LabelEXPToProject
-        private string _labelEXPToProject;
-        public string LabelEXPToProject
-        {
-            get { return _labelEXPToProject; }
-            set { SetProperty(ref _labelEXPToProject, value); }
-        }
-
-
-        #endregion
-        public List<GroupProject> GroupProjects { get => _groupProjects; set => _groupProjects = value; }
-        private List<GroupProject> _groupProjects;
-
-        public GroupPageViewModel()
-        {
-            ImageSource1 = "http://ovejarosa.com/wp-content/uploads/2019/09/Valentina-Sampaio.png";
-            ImageSource2 = "http://ovejarosa.com/wp-content/uploads/2019/09/Valentina-Sampaio.png";
-            ImageSource3 = "http://ovejarosa.com/wp-content/uploads/2019/09/Valentina-Sampaio.png";
-            ImageSource4 = "http://ovejarosa.com/wp-content/uploads/2019/09/Valentina-Sampaio.png";
-            LabelTimeToProject = "25/11/19 - 13/12/19";
-            LabelEXPToProject = "30 000 XP";
-
-            GroupProjects = new List<GroupProject>()
+            get { return _isActive; }
+            set
             {
-                new GroupProject{ ImageURLProject = "https://icon-library.net/images/arrow-icon-white/arrow-icon-white-0.jpg" , ProjectName = "PROJECT ONE", ProjectNamePoints ="100"},
-                new GroupProject{ ImageURLProject = "https://icon-library.net/images/arrow-icon-white/arrow-icon-white-0.jpg" , ProjectName = "PROJECT TOW", ProjectNamePoints ="200"},
-                new GroupProject{ ImageURLProject = "https://icon-library.net/images/arrow-icon-white/arrow-icon-white-0.jpg" , ProjectName = "PROJECT BAGDAD", ProjectNamePoints ="1000"},
-                new GroupProject{ ImageURLProject = "https://icon-library.net/images/arrow-icon-white/arrow-icon-white-0.jpg" , ProjectName = "PROJECT DELTA", ProjectNamePoints ="500"}
-            };
-             
-        }
-
-        #region CLASS GROUPS
-        public class GroupProject
-        {
-            public string ProjectName { get; set; }
-            public string ImageURLProject { get; set; }
-            public string ProjectNamePoints { get; set; }
-
-            public override string ToString()
-            {
-                return ProjectName;
+                _isActive = value;
+                OnActiveTabChangedAsync();
             }
         }
-        #endregion
+
+        private async void OnActiveTabChangedAsync()
+        {
+            if (IsActive)
+            {
+                var result = await _groupService.GetGroupById(2);
+                Group = result as Group;
+            }
+        }
+
+        public GroupPageViewModel(GroupService groupService, INavigationService navigationService)
+        {
+            _groupService = groupService;
+            this.NavigationService = navigationService;
+            this.NavigateToProfile = new DelegateCommand<object>(GoToProfile);
+        }
+
+        void GoToProfile(object parameters)
+        {
+            var navParam = new NavigationParameters();
+            navParam.Add("id", parameters);
+            this.NavigationService.NavigateAsync("ProfilePage", navParam);
+        }
+
+        public void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+        }
+
+        public Group Group
+        {
+            get { return _group; }
+            set { SetProperty(ref _group, value); }
+        }
+
+        public ObservableCollection<Group> GroupsList
+        {
+            get { return _groupsList; }
+            set { SetProperty(ref _groupsList, value); }
+        }
     }
 }

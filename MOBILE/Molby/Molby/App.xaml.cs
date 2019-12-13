@@ -1,15 +1,11 @@
-﻿using Prism;
+﻿ using Prism;
 using Prism.Ioc;
 using Molby.ViewModels;
 using Molby.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using Windows.UI.Notifications;
-using Plugin.Toasts;
-using Microsoft.VisualStudio.Services.Client;
-using System;
-using Xamarin.Essentials;
-using Plugin.LocalNotifications;
+using Molby.Services;
+using Molby.Services.Interfaces;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Molby
@@ -28,41 +24,24 @@ namespace Molby
         protected override async void OnInitialized()
         {
             InitializeComponent();
-            
-            //await NavigationService.NavigateAsync(nameof(MainPage) + "/" + nameof(MasterDPage));
-            await NavigationService.NavigateAsync("NavigationPage/MasterDPage");
-            //await NavigationService.NavigateAsync("NavigationPage/LeveltPage");
-            //await NavigationService.NavigateAsync("NavigationPage/LoginPage");
 
-            NotificationComponment();
-        }
-
-        public async void NotificationComponment()
-        {
-            Vibration.Vibrate();
-            var duration = TimeSpan.FromSeconds(1);
-            Vibration.Vibrate(duration);
-            DateTime dateTime = new DateTime();
-            CrossLocalNotifications.Current.Show("Molby Application", "All Molby services are started", 1);
-            // Code omitted for clarity - here is where the service would do something.
-
-            // Work has finished, now dispatch anotification to let the user know.
-            //new Notification.Builder(this).SetContentTitle("Molby").SetContentText("All Molby services are running").Build();
-
+            await NavigationService.NavigateAsync("NavigationPage/TabPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<IUserService, UserService>();
+            containerRegistry.RegisterSingleton<IGroupService, GroupService>();
+            containerRegistry.RegisterSingleton<ILevelService, LevelService>();
+            containerRegistry.RegisterSingleton<IRewardService, RewardService>();
+
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
-            containerRegistry.RegisterForNavigation<MasterDPage, MasterDPageViewModel>();
-            containerRegistry.RegisterForNavigation<LeveltPage, LeveltPageViewModel>();
-            containerRegistry.RegisterForNavigation<RewardPage, RewardPageViewModel>();
-            containerRegistry.RegisterForNavigation<GroupPointPage, GroupPointPageViewModel>();
             containerRegistry.RegisterForNavigation<GroupPage, GroupPageViewModel>();
-            containerRegistry.RegisterForNavigation<UserReward, UserRewardViewModel>();
-            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
+            containerRegistry.RegisterForNavigation<LevelsPage, LevelsPageViewModel>();
+            containerRegistry.RegisterForNavigation<TabPage, TabPageViewModel>();
+            containerRegistry.RegisterForNavigation<ProfilePage, ProfilePageViewModel>();
+            containerRegistry.RegisterForNavigation<LevelDescriptionPage, LevelDescriptionPageViewModel>();
+            containerRegistry.RegisterForNavigation<RewardsPage, RewardsPageViewModel>();
         }
     }
 }

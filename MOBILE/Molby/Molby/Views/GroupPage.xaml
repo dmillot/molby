@@ -3,56 +3,80 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Molby.Views.GroupPage"
-             BackgroundColor="#303133">
+             x:Class="Molby.Views.GroupPage">
 
-    <StackLayout>
-        <Grid Margin="5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-            </Grid.ColumnDefinitions>
-            <Image Source="{Binding ImageSource1}" Grid.Column="0" Grid.Row="0" />
-            <Image Source="{Binding ImageSource2}" Grid.Column="1" Grid.Row="0" />
-            <Image Source="{Binding ImageSource3}" Grid.Column="0" Grid.Row="1" />
-            <Image Source="{Binding ImageSource4}" Grid.Column="1" Grid.Row="1" />
-        </Grid>
-        <Label Text="Molby" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" />
-        <Label Text="{Binding LabelTimeToProject}" HorizontalOptions="Center" FontSize="Medium" />
-        <Label />
-        <Label Text="{Binding LabelEXPToProject}" HorizontalOptions="Center" FontSize="Large" />
-        <Label />
-        <ListView x:Name="MyListProject" 
-                  ItemsSource="{Binding GroupProjects}"
-                  IsPullToRefreshEnabled="true"
-                  SelectionMode="Single"
-                  RefreshControlColor="#3385D4"
-                  SeparatorColor="#3385D4">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="0,6*" />
-                                <ColumnDefinition Width="0,2*" />
-                                <ColumnDefinition Width="0,2*" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="{Binding ProjectName}" TextColor="White" FontAttributes="Bold" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            <Label Text="{Binding ProjectNamePoints}" TextColor="White" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
-                            <Image Source="{Binding ImageURLProject}" Aspect="AspectFill" Grid.Column="2"/>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-        <Button Text="Attribute 300 Points" BackgroundColor="#003988" HorizontalOptions="Center" VerticalOptions="FillAndExpand" FontSize="Large" />
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout>
+                <Grid HeightRequest="200" RowSpacing="1" ColumnSpacing="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
 
-    </StackLayout>
-  
+                    <Image Source="{Binding Group.Members[0].Member.Picture}" Aspect="AspectFill" />
+                    <Image Grid.Column="1" Source="{Binding Group.Members[1].Member.Picture}" Aspect="AspectFill" />
+                    <Image Grid.Row="1" Source="{Binding Group.Members[2].Member.Picture}" Aspect="AspectFill" />
+                    <Image Grid.Row="1" Source="{Binding Group.Members[3].Member.Picture}" Grid.Column="1" Aspect="AspectFill"/>
+
+                </Grid>
+                <Label x:Name="nameLabel" Text="{Binding Group.Name}" TextColor="White" Margin="0,20,0,0" HorizontalOptions="Center" FontSize="32">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Comfortaa-Regular</OnPlatform.iOS>
+                            <OnPlatform.Android>Comfortaa-Regular.ttf#Comfortaa-Regular</OnPlatform.Android>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Label Text="{Binding Group.Duration}" TextColor="White" Margin="0,8,0,20" HorizontalOptions="Center" FontSize="14">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Comfortaa-Regular</OnPlatform.iOS>
+                            <OnPlatform.Android>Comfortaa-Regular.ttf#Comfortaa-Regular</OnPlatform.Android>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <BoxView BackgroundColor="Black" HeightRequest="1" />
+                <Label Text="{Binding Group.Xp}" TextColor="White" Margin="0,10,0,10" HorizontalOptions="Center" FontSize="32">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Comfortaa-Regular</OnPlatform.iOS>
+                            <OnPlatform.Android>Comfortaa-Regular.ttf#Comfortaa-Regular</OnPlatform.Android>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <ListView x:Name="listView" ItemsSource="{Binding Group.Members}" HeightRequest="200" VerticalOptions="FillAndExpand" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal" BackgroundColor="#404244">
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=NavigateToProfile}" CommandParameter="{Binding Member.Id}" />
+                                    </StackLayout.GestureRecognizers>
+                                    <Label Text="{Binding Member.Fullname}" TextColor="White" Margin="10,0,0,0" HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+                                    <Label Text="{Binding Member.FormatXp}" TextColor="White" Margin="0,0,10,0" VerticalOptions="Center" />
+                                    <Grid BackgroundColor="#303133" Padding="10,10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="rightarrow.png" />
+                                    </Grid>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Button Text="ATTRIBUTE" BackgroundColor="#000000" TextColor="White" Margin="0,20,0,20" HorizontalOptions="Center" WidthRequest="300" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
+    
+    

@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Xamarin\\Molby\\Molby\\Molby.Android\\Molby.Android.csproj": {}
+    "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby.Android\\Molby.Android.csproj": {}
   },
   "projects": {
-    "D:\\Xamarin\\Molby\\Molby\\Molby.Android\\Molby.Android.csproj": {
+    "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby.Android\\Molby.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Xamarin\\Molby\\Molby\\Molby.Android\\Molby.Android.csproj",
+        "projectUniqueName": "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby.Android\\Molby.Android.csproj",
         "projectName": "Molby.Android",
-        "projectPath": "D:\\Xamarin\\Molby\\Molby\\Molby.Android\\Molby.Android.csproj",
-        "packagesPath": "C:\\Users\\maxime\\.nuget\\packages\\",
-        "outputPath": "D:\\Xamarin\\Molby\\Molby\\Molby.Android\\obj\\",
+        "projectPath": "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby.Android\\Molby.Android.csproj",
+        "packagesPath": "C:\\Users\\Damie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\maxime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Damie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid90": {
             "projectReferences": {
-              "D:\\Xamarin\\Molby\\Molby\\Molby\\Molby.csproj": {
-                "projectPath": "D:\\Xamarin\\Molby\\Molby\\Molby\\Molby.csproj"
+              "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby\\Molby.csproj": {
+                "projectPath": "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby\\Molby.csproj"
               }
             }
           }
@@ -42,25 +42,21 @@
       "frameworks": {
         "monoandroid90": {
           "dependencies": {
-            "Plugin.Toast": {
+            "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
-              "version": "[2.1.2, )"
+              "version": "[5.2.7, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             },
             "Prism.DryIoc.Forms": {
               "target": "Package",
               "version": "[7.2.0.1422, )"
             },
-            "Toasts.Forms.Plugin": {
+            "Xam.Plugins.Forms.ImageCircle": {
               "target": "Package",
-              "version": "[3.3.2, )"
-            },
-            "Xam.Plugins.Notifier": {
-              "target": "Package",
-              "version": "[3.0.1, )"
-            },
-            "Xam.Plugins.Vibrate": {
-              "target": "Package",
-              "version": "[4.0.0.5, )"
+              "version": "[3.0.0.5, )"
             },
             "Xamarin.Android.Support.CustomTabs": {
               "target": "Package",
@@ -88,27 +84,27 @@
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.3.0.991211, )"
+              "version": "[4.4.0.991265, )"
             }
           }
         }
       }
     },
-    "D:\\Xamarin\\Molby\\Molby\\Molby\\Molby.csproj": {
+    "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby\\Molby.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Xamarin\\Molby\\Molby\\Molby\\Molby.csproj",
+        "projectUniqueName": "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby\\Molby.csproj",
         "projectName": "Molby",
-        "projectPath": "D:\\Xamarin\\Molby\\Molby\\Molby\\Molby.csproj",
-        "packagesPath": "C:\\Users\\maxime\\.nuget\\packages\\",
-        "outputPath": "D:\\Xamarin\\Molby\\Molby\\Molby\\obj\\",
+        "projectPath": "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby\\Molby.csproj",
+        "packagesPath": "C:\\Users\\Damie\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Damie\\Desktop\\XaMolby\\Molby\\Molby\\Molby\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\maxime\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Damie\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -133,15 +129,9 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
-            "Microsoft.CodeAnalysis.FxCopAnalyzers": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Microsoft.AspNet.WebApi.Client": {
               "target": "Package",
-              "version": "[2.9.8, )"
-            },
-            "Microsoft.VisualStudio.Services.InteractiveClient": {
-              "target": "Package",
-              "version": "[16.153.0, )"
+              "version": "[5.2.7, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",
@@ -153,33 +143,17 @@
               "target": "Package",
               "version": "[12.0.3, )"
             },
-            "Plugin.Toast": {
-              "target": "Package",
-              "version": "[2.1.2, )"
-            },
             "Prism.DryIoc.Forms": {
               "target": "Package",
               "version": "[7.2.0.1422, )"
             },
-            "Toasts.Forms.Plugin": {
+            "Xam.Plugins.Forms.ImageCircle": {
               "target": "Package",
-              "version": "[3.3.2, )"
-            },
-            "Xam.Plugins.Notifier": {
-              "target": "Package",
-              "version": "[3.0.1, )"
-            },
-            "Xam.Plugins.Vibrate": {
-              "target": "Package",
-              "version": "[4.0.0.5, )"
-            },
-            "Xamarin.Essentials": {
-              "target": "Package",
-              "version": "[1.3.1, )"
+              "version": "[3.0.0.5, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
-              "version": "[4.3.0.991211, )"
+              "version": "[4.4.0.991265, )"
             }
           },
           "imports": [
@@ -192,7 +166,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

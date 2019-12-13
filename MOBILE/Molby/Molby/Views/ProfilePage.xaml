@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Class="Molby.Views.ProfilePage">
+
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout Orientation="Vertical">
+                <controls:CircleImage Source="{Binding User.Picture}" Aspect="AspectFill" Margin="0,40,0,0">
+                    <controls:CircleImage.WidthRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android, iOS">125</On>
+                            <On Platform="WinPhone">125</On>
+                        </OnPlatform>
+                    </controls:CircleImage.WidthRequest>
+                    <controls:CircleImage.HeightRequest>
+                        <OnPlatform x:TypeArguments="x:Double">
+                            <On Platform="Android, iOS">125</On>
+                            <On Platform="WinPhone">125</On>
+                        </OnPlatform>
+                    </controls:CircleImage.HeightRequest>
+                </controls:CircleImage>
+                <Label Text="{Binding User.Fullname}" FontSize="32" TextColor="White" HorizontalOptions="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Comfortaa-Regular</OnPlatform.iOS>
+                            <OnPlatform.Android>Comfortaa-Regular.ttf#Comfortaa-Regular</OnPlatform.Android>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Label Text="{Binding User.Group.Group.Name}" FontSize="20" TextColor="White" HorizontalOptions="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Comfortaa-Regular</OnPlatform.iOS>
+                            <OnPlatform.Android>Comfortaa-Regular.ttf#Comfortaa-Regular</OnPlatform.Android>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+                <Label Text="{Binding User.YearGroup.Name}" FontSize="13" TextColor="White" HorizontalOptions="Center">
+                    <Label.FontFamily>
+                        <OnPlatform x:TypeArguments="x:String">
+                            <OnPlatform.iOS>Roboto-Black</OnPlatform.iOS>
+                            <OnPlatform.Android>Roboto-Black.ttf#Roboto-Black</OnPlatform.Android>
+                        </OnPlatform>
+                    </Label.FontFamily>
+                </Label>
+
+                <Grid Margin="0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView BackgroundColor="#222222" />
+                    <Label Text="Level" TextColor="White" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+
+                <StackLayout Orientation="Vertical">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{prism:NavigateTo 'LevelDescriptionPage'}" CommandParameter="{Binding UserLevel.Id}" />
+                    </StackLayout.GestureRecognizers>
+                    <Label Text="{Binding UserLevel.Label}" FontSize="24" TextColor="White" HorizontalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <OnPlatform.iOS>Comfortaa-Regular</OnPlatform.iOS>
+                                <OnPlatform.Android>Comfortaa-Regular.ttf#Comfortaa-Regular</OnPlatform.Android>
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+
+                    <controls:CircleImage Source="{Binding UserLevel.Skin}" Aspect="AspectFit">
+                        <controls:CircleImage.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="Android, iOS">100</On>
+                                <On Platform="WinPhone">100</On>
+                            </OnPlatform>
+                        </controls:CircleImage.WidthRequest>
+                        <controls:CircleImage.HeightRequest>
+                            <OnPlatform x:TypeArguments="x:Double">
+                                <On Platform="Android, iOS">100</On>
+                                <On Platform="WinPhone">100</On>
+                            </OnPlatform>
+                        </controls:CircleImage.HeightRequest>
+                    </controls:CircleImage>
+
+                    <Label Text="{Binding User.FormatXp}" FontSize="20" TextColor="White" HorizontalOptions="Center">
+                        <Label.FontFamily>
+                            <OnPlatform x:TypeArguments="x:String">
+                                <OnPlatform.iOS>Comfortaa-Regular</OnPlatform.iOS>
+                                <OnPlatform.Android>Comfortaa-Regular.ttf#Comfortaa-Regular</OnPlatform.Android>
+                            </OnPlatform>
+                        </Label.FontFamily>
+                    </Label>
+                </StackLayout>
+
+                <Grid Margin="0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <BoxView BackgroundColor="#222222" />
+                    <Label Text="Rewards Won" TextColor="White" FontSize="18" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+
+                <ScrollView Orientation="Vertical">
+                    <RelativeLayout HeightRequest="150">
+                        <ListView x:Name="listView"
+                                  ItemsSource="{Binding User.Rewards}"
+                                  CachingStrategy="RecycleElement"
+                                  RowHeight="140"
+                                  WidthRequest="450"
+                                  HeightRequest="450"
+                                  VerticalScrollBarVisibility="Never"
+                                  Rotation="270"
+                                  RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-45}"
+                                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=-0.5, Constant=45}"
+                                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=Constant,Constant=90}">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <StackLayout Orientation="Vertical" Rotation="90" VerticalOptions="Center">
+                                            <controls:CircleImage Source="{Binding Reward.Skin}" Aspect="AspectFit">
+                                                <controls:CircleImage.WidthRequest>
+                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                        <On Platform="Android, iOS">50</On>
+                                                        <On Platform="WinPhone">50</On>
+                                                    </OnPlatform>
+                                                </controls:CircleImage.WidthRequest>
+                                                <controls:CircleImage.HeightRequest>
+                                                    <OnPlatform x:TypeArguments="x:Double">
+                                                        <On Platform="Android, iOS">50</On>
+                                                        <On Platform="WinPhone">50</On>
+                                                    </OnPlatform>
+                                                </controls:CircleImage.HeightRequest>
+                                            </controls:CircleImage>
+                                            <Label Text="{Binding DateValidation, StringFormat='{0:dd/MM/yyyy}'}" TextColor="White" HorizontalOptions="Center" />
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+                    </RelativeLayout>
+                </ScrollView>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
